@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Input, DoCheck} from '@angular/core';
+import { LoginComponent } from './login/login.component';
+import { Router } from '@angular/router';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'app works!';
+@Component(
+    {
+        selector: 'app-root',
+        template: `
+        <h2>App</h2>
+        <router-outlet></router-outlet>
+        `
+    }
+)
+export class AppComponent{
+    name: string;
+    pass: string;
+    msg:string;
+    first:boolean = true;
+
+    onYouGo(){
+        this.first = false;
+        this.name = (document.getElementById("name") as HTMLInputElement).value;
+        this.pass = (document.getElementById("pass") as HTMLInputElement).value;
+    }
 }
