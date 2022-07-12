@@ -45,6 +45,6 @@ jobs:
               repo: context.repo.repo
             })
           console.log(tagsResult)
-          return tagsResult.data[0]?.name
+          return tagsResult.data[0].name
     - name: Get Latest Tag
       run: echo "${{steps.fetch-tags.outputs.result}}"
