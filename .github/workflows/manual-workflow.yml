@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow #1
+name: Manual workflow 1
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -44,4 +44,4 @@ jobs:
               repo: context.repo.repo
             })
     - name: Get Latest Tag
-      run: echo "${{steps.fetch-tags.outputs}}"
+      run: echo "${{steps.fetch-tags.outputs.toString()}}"
