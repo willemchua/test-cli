@@ -38,11 +38,11 @@ jobs:
       - uses: actions/github-script@v5
         with:
           script: |
-            const tagValue = 'refs/tags/' + ${{ steps.bump-semver.outputs.new_version }}
+            const tagValue = ${{ steps.bump-semver.outputs.new_version }}
             console.log(tagValue)
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: tagValue,
+              ref: `refs/tags/${tagValue}`,
               sha: context.sha
             })
