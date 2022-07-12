@@ -44,4 +44,4 @@ jobs:
               repo: context.repo.repo
             })
     - name: Get Latest Tag
-      run: echo "${{steps.fetch-tags.outputs.toString()}}"
+      run: echo "${{steps.fetch-tags.outputs[0].name}}"
