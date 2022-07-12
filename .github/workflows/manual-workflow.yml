@@ -45,4 +45,6 @@ jobs:
               repo: context.repo.repo
             })
     - name: Get Latest Tag
-      run: echo "${{steps.fetch-tags.outputs}}"
+      with: 
+        script:
+          console.log(`${{steps.fetch-tags.outputs}}`)
