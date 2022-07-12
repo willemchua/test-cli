@@ -40,13 +40,9 @@ jobs:
       with:
         debug: true
         script: |
-          const res = await github.rest.repos.listTags({
+          github.rest.repos.listTags({
               owner: context.repo.owner,
               repo: context.repo.repo
             })
-          console.log(res);
     - name: Get Latest Tag
-      uses: actions/javascript-action@v1
-      with: 
-        script:
-          console.log(`${{steps.fetch-tags.outputs}}`)
+      run: echo "${{steps.fetch-tags.outputs.data[0].name}}"
