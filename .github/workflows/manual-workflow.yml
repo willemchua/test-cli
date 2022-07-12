@@ -40,10 +40,11 @@ jobs:
       with:
         debug: true
         script: |
-          github.rest.repos.listTags({
+          const res = await github.rest.repos.listTags({
               owner: context.repo.owner,
               repo: context.repo.repo
             })
+          console.log(res);
     - name: Get Latest Tag
       uses: actions/javascript-action@v1
       with: 
