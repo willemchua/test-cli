@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manual workflow #1
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -39,7 +39,7 @@ jobs:
       uses: actions/github-script@v5
       with: 
         script: |
-          github.rest.git.listTags({
+          github.rest.repos.listTags({
               owner: context.repo.owner,
               repo: context.repo.repo
             })
