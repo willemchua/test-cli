@@ -45,6 +45,7 @@ jobs:
               repo: context.repo.repo
             })
     - name: Get Latest Tag
+      uses: actions/javascript-action@v1
       with: 
         script:
           console.log(`${{steps.fetch-tags.outputs}}`)
