@@ -23,8 +23,6 @@ on:
 jobs:
   # This workflow contains a single job called "greet"
   create-release:
-    env:
-      GITHUB_TOKEN: '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'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -37,6 +35,7 @@ jobs:
           level: minor
       - uses: actions/github-script@v5
         with:
+          token: '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'
           script: |
             const tagValue = '${{ steps.bump-semver.outputs.new_version }}'
             console.log(tagValue)
