@@ -35,7 +35,7 @@ jobs:
           level: minor
       - uses: actions/github-script@v5
         with:
-          github-token: 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
+          github-token: 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
           script: |
             const tagValue = '${{ steps.bump-semver.outputs.new_version }}'
             console.log(tagValue)
