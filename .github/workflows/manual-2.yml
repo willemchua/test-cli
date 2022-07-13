@@ -45,3 +45,13 @@ jobs:
               ref: `refs/tags/${tagValue}`,
               sha: context.sha
             })
+      - uses: actions/github-script@v5
+        with:
+          github-token: '${{ secrets.ACCESS_TOKEN }}'
+          script: |
+            const tagValue = '${{ steps.bump-semver.outputs.new_version }}'
+            github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: tagValue
+            })
