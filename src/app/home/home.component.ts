@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'home-app',
     template: `
-            <h1> Hello, {{nama}}</h1>
+            <h1> Hello, {{nama}}. Test</h1>
             <child-component> </child-component>
 
     `
