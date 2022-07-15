@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector:'child-component',
     template:`
-        <h1 *ngIf = "valid"> Finally </h1>
+        <h1 *ngIf = "valid"> Finally, test </h1>
         <button (click) = doToggle()>Toggle</button>
 
     `
